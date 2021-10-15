@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.hacktorate;
 
 import org.junit.Test;
 

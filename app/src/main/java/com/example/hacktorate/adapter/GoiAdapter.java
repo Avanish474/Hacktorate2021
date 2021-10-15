@@ -1,4 +1,4 @@
-package com.example.myapplication.adapter;
+package com.example.hacktorate.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.R;
-import com.example.myapplication.models.GoiDetail;
+import com.example.hacktorate.R;
+import com.example.hacktorate.models.GoiDetail;
 
 import java.util.List;
 

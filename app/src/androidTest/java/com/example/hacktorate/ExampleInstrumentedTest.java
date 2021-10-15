@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.hacktorate;
 
 import android.content.Context;
 

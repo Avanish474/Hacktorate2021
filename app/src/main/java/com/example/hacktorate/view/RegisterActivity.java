@@ -1,6 +1,4 @@
-package com.example.myapplication.view;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.hacktorate.view;
 
 import android.content.Intent;
 import android.os.Build;
@@ -9,7 +7,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.myapplication.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hacktorate.R;
+
 
 public class RegisterActivity extends AppCompatActivity {
 

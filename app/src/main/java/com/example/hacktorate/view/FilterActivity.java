@@ -1,10 +1,4 @@
-package com.example.myapplication.view;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.hacktorate.view;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
@@ -19,9 +13,15 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.myapplication.R;
-import com.example.myapplication.adapter.GoiAdapter;
-import com.example.myapplication.models.GoiDetail;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.hacktorate.R;
+import com.example.hacktorate.adapter.GoiAdapter;
+import com.example.hacktorate.models.GoiDetail;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
