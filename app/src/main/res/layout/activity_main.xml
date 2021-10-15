@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#feb209"
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mainac" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.7dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15.7dp"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:orientation="vertical"
+          >
+            <ImageView
+                android:alpha="0.7"
+                android:layout_width="wrap_content"
+                android:layout_height="444dp"
+                android:background="@drawable/white_cueve_bg"
+                />
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20.7dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="57.7dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="LOGIN"
+                    android:textColor="#030303"
+                    android:textSize="31.3sp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email or Username"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_marginTop="55dp"
+                        android:layout_width="match_parent"
+                        android:background="#003700B3"
+                        android:textColor="@color/contentTextColor"
+                        android:layout_marginRight="18dp"
+                        android:layout_height="wrap_content"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_password_hint"
+                    app:endIconMode="password_toggle"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_marginTop="35dp"
+                        android:layout_width="match_parent"
+                        android:background="#003700B3"
+                        android:textColor="@color/contentTextColor"
+                        android:layout_marginRight="18dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:textCursorDrawable="@drawable/grey_cursor_color"-->
+<!--                    android:textSize="15sp" />-->
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+
+                    android:layout_marginRight="44.3dp"
+                    android:background="#d5d5d5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="17.3dp"
+                    android:layout_marginRight="44.3dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Forgot Password?"
+                    android:textColor="#d5d5d5"
+                    android:textSize="12.3sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingLeft="30dp">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                       android:onClick="onCll"
+                        android:src="@drawable/ic_baseline_arrow_forward_24" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_horizontal"
+                android:text="Don't have an account?"
+                android:textColor="#ffffff"
+
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_horizontal"
+                android:onClick="onLoginClick"
+                android:text="Register"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:layout_gravity="center"-->
+    <!--    android:background="@color/login_bk_color"-->
+    <!--    android:focusableInTouchMode="true"-->
+    <!--    android:gravity="center"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentLeft="true"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:paddingTop="20dp">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:padding="20dp">-->
+
+    <!--            <RelativeLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/viewParent.headerText.NoMode"-->
+    <!--                    android:layout_alignParentLeft="true"-->
+    <!--                    android:layout_centerVertical="true"-->
+    <!--                    android:text="Already \nhave an \nAccount?" />-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_alignParentTop="true"-->
+    <!--                    android:layout_alignParentRight="true"-->
+    <!--                    android:src="@drawable/ic_register_hero" />-->
+    <!--            </RelativeLayout>-->
+
+    <!--            <com.google.android.material.textfield.TextInputLayout-->
+    <!--                android:id="@+id/textInputEmail"-->
+    <!--                style="@style/parent"-->
+    <!--                android:layout_marginTop="@dimen/loginViewsMargin">-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/editTextEmail"-->
+    <!--                    style="@style/modifiedEditText"-->
+    <!--                    android:hint="@string/login_email_hint"-->
+    <!--                    android:inputType="textEmailAddress"-->
+    <!--                    android:maxLines="1" />-->
+    <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--            <com.google.android.material.textfield.TextInputLayout-->
+    <!--                android:id="@+id/textInputPassword"-->
+    <!--                style="@style/parent"-->
+    <!--                android:layout_marginTop="@dimen/loginViewsMargin">-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/editTextPassword"-->
+    <!--                    style="@style/modifiedEditText"-->
+    <!--                    android:hint="@string/login_password_hint"-->
+    <!--                    android:inputType="textPassword"-->
+    <!--                    android:maxLines="1" />-->
+    <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--            <TextView-->
+    <!--                style="@style/viewParent"-->
+    <!--                android:layout_gravity="end"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="Forgot Password?"-->
+    <!--                android:textColor="@color/primaryTextColor"-->
+    <!--                android:textSize="@dimen/newsMoreTextSize" />-->
+
+    <!--            <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton-->
+    <!--                android:id="@+id/cirLoginButton"-->
+    <!--                style="@style/loginButton"-->
+    <!--                android:layout_gravity="center_horizontal"-->
+    <!--                android:layout_marginTop="@dimen/loginViewsMargin"-->
+    <!--                android:text="Login"-->
+    <!--                app:initialCornerAngle="27dp"-->
+    <!--                app:spinning_bar_color="#FFF"-->
+    <!--                app:spinning_bar_padding="6dp"-->
+    <!--                app:spinning_bar_width="4dp" />-->
+
+    <!--            <TextView-->
+    <!--                style="@style/parent"-->
+    <!--                android:layout_marginTop="@dimen/loginViewsMargin"-->
+    <!--                android:onClick="onLoginClick"-->
+    <!--                android:text="New user? Register Now"-->
+    <!--                android:textAlignment="center"-->
+    <!--                android:textColor="@color/themeColor"-->
+    <!--                android:textSize="17sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="30dp"-->
+    <!--                android:gravity="center"-->
+    <!--                android:weightSum="12">-->
+
+    <!--                <View-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="1dp"-->
+    <!--                    android:layout_weight="3"-->
+    <!--                    android:background="@color/colorPrimaryDark" />-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/viewParent.headerText.NoMode"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="6"-->
+    <!--                    android:text="Use other Methods"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textSize="12sp" />-->
+
+    <!--                <View-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="1dp"-->
+    <!--                    android:layout_weight="3"-->
+    <!--                    android:background="@color/colorPrimaryDark" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:gravity="center">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:src="@drawable/ic_facebook" />-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginLeft="10dp"-->
+    <!--                    android:src="@drawable/ic_google_plus" />-->
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+    <!--    </ScrollView>-->
+    <!--    <View-->
+    <!--        android:layout_width="11dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:background="@drawable/ic_side_bg" />-->
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginRight="11dp"-->
+    <!--        android:layout_marginBottom="30dp"-->
+    <!--        android:onClick="onLoginClick"-->
+    <!--        android:src="@drawable/ic_add_img" />-->
+    <!--</RelativeLayout>-->
