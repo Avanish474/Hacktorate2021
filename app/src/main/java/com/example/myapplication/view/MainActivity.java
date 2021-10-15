@@ -19,10 +19,12 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_main);
     }
+
     public void onLoginClick(View View){
         startActivity(new Intent(this,RegisterActivity.class));
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
     }
+
     public void onCll(View view){
         startActivity(new Intent(this,MainActivity2.class));
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
