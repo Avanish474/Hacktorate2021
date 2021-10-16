@@ -17,11 +17,18 @@
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_register_hero.xml" value="0.1" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_side_bg.xml" value="0.1" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_filter.xml" value="0.176" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_home.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main2.xml" value="0.27025641025641023" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/appbar_layout.xml" value="0.2" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_filter.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_login.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_price.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_register.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/goiitem.xml" value="0.2" />
+        <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/layout/nav_header_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/menu/filtermenu.xml" value="0.1" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/Users/avani/AndroidStudioProjects/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14351851851851852" />

@@ -1,26 +1,31 @@
 package com.example.hacktorate.view;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.AbsListView;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.ProgressBar;
+
 import com.example.hacktorate.R;
 import com.example.hacktorate.adapter.GoiAdapter;
+import com.example.hacktorate.databinding.FragmentPriceBinding;
 import com.example.hacktorate.models.GoiDetail;
 
 import org.json.JSONArray;
@@ -34,7 +39,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class MainActivity2 extends AppCompatActivity {
+public class PriceFragment extends Fragment {
+
+    private FragmentPriceBinding binding;
     private GoiAdapter goiAdapter;
     private RecyclerView recyclerView;
     private List<GoiDetail> goiDetails;
@@ -44,26 +51,39 @@ public class MainActivity2 extends AppCompatActivity {
     private Boolean isScrolling=false;
     int currentItems,totalItems,scrolledItems;
     int offset=20;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        MainActivity2.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        recyclerView=findViewById(R.id.recyclerView);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        binding = FragmentPriceBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+//        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView = binding.recyclerView;
         goiDetails =new ArrayList<>();
-        linearLayoutManager=new LinearLayoutManager(this);
-        progressBar=findViewById(R.id.progressBar);
+        linearLayoutManager=new LinearLayoutManager(requireContext());
+//        progressBar=findViewById(R.id.progressBar);
+        progressBar = binding.progressBar;
         progressBar.setVisibility(View.GONE);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(goiAdapter);
 
-        toolbar=findViewById((R.id.BarLayout));
+//        toolbar=findViewById((R.id.BarLayout));
+        toolbar = binding.BarLayout.getRoot();
 
-        ActionBar actionBar=getSupportActionBar();
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Kissan GOI");
+//        ActionBar actionBar= this.getSupportActionBar();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Kissan GOI");
         try{
-            DownloadTask task = new DownloadTask();
+//            MainActivity2.DownloadTask task = new MainActivity2.DownloadTask();
+            PriceFragment.DownloadTask task = new DownloadTask();
             task.execute("https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=20") ;
         }
         catch (Exception e){
@@ -72,9 +92,6 @@ public class MainActivity2 extends AppCompatActivity {
         loadData();
 
     }
-
-
-
 
 
     public class DownloadTask extends AsyncTask<String,Void,String> {
@@ -121,18 +138,18 @@ public class MainActivity2 extends AppCompatActivity {
                     for (int i = 0; i < arr.length(); i++) {
                         JSONObject part = arr.getJSONObject(i);
 //                        if(part.getString("district").equals("Kurnool") || part.getString("state").equals("Chattisgarh")||part.getString("commodity").equals("Tamarind Seed")) {
-                            GoiDetail details = new GoiDetail();
-                            details.setGroceryName(part.getString("commodity"));
-                            details.setGroceryPlace(part.getString("district") + ", " + part.getString("state"));
-                            details.setGroceryPrice(part.getString("modal_price"));
-                            details.setGroceryTime(part.getString("arrival_date"));
+                        GoiDetail details = new GoiDetail();
+                        details.setGroceryName(part.getString("commodity"));
+                        details.setGroceryPlace(part.getString("district") + ", " + part.getString("state"));
+                        details.setGroceryPrice(part.getString("modal_price"));
+                        details.setGroceryTime(part.getString("arrival_date"));
 
 
-                            goiDetails.add(details);
+                        goiDetails.add(details);
 
 
                     }
-                    goiAdapter = new GoiAdapter(MainActivity2.this, goiDetails);
+                    goiAdapter = new GoiAdapter(requireContext(), goiDetails);
                     goiAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(goiAdapter);
                     recyclerView.setAdapter(goiAdapter);
@@ -143,15 +160,16 @@ public class MainActivity2 extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-      else{
-          try{
-                DownloadTask task = new DownloadTask();
-              task.execute("https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=20") ;
+            else{
+                try{
+//                    MainActivity2.DownloadTask task = new MainActivity2.DownloadTask();
+                    PriceFragment.DownloadTask task = new DownloadTask();
+                    task.execute("https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=20") ;
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
             }
-          catch (Exception e){
-              e.printStackTrace();
-          }
-      }
 
 
         }
@@ -192,7 +210,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void run() {
                 try{
-                    DownloadTask task = new DownloadTask();
+//                    MainActivity2.DownloadTask task = new MainActivity2.DownloadTask();
+                    PriceFragment.DownloadTask task = new DownloadTask();
                     task.execute("https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=20") ;
                     offset+=20;
 
@@ -206,18 +225,17 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-       super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.mainmenu,menu);
-        return true;
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        requireActivity().getMenuInflater().inflate(R.menu.mainmenu,menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-         super.onOptionsItemSelected(item);
+        super.onOptionsItemSelected(item);
         if(item.getItemId()==R.id.searchByDistrict){
-            Intent filterIntent =new Intent(MainActivity2.this,FilterActivity.class);
-            startActivity(filterIntent);
+//            startActivity(filterIntent);
+
         }
         return true;
 

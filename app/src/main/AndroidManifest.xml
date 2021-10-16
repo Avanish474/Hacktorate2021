@@ -15,21 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name="com.example.hacktorate.view.FilterActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.hacktorate.view.MainActivity2"
-            android:exported="true" />
-        <activity
-            android:name="com.example.hacktorate.view.RegisterActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.hacktorate.view.MainActivity"
+            android:name=".view.HomeActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>
